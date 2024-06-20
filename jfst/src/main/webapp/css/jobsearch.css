@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../images/bg_img.jpg');
+    height: 100vh;
+  	background-size: cover;
+  	background-position: center;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 50px 80px;
+}
+
+.nav > h1{
+	margin-top:0;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.navitems{
+	margin-top:0;
+    display: flex;
+    gap: 20px;
+}
+.nav > h1 :hover
+{
+    cursor:pointer;
+}
+.navitems:hover
+{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.filter-bar {
+    padding: 10px;
+    text-align: left;
+    padding: 30px;
+    margin: 30px;
+    margin-left: 125px;
+}
+
+.filter-bar label,
+.filter-bar select {
+    margin-right: 20px;
+    font-size: 16px;
+}
+.filter-bar select {
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-right: 100px;
+}
+
+.filter-bar select:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.filter-bar select:focus {
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.filter-bar option {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.job-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 150px;
+    margin-right: 150px;
+    position: relative;
+}
+.job-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: rgb(12, 29, 107);
+    background-color: #f5f5f5;
+}
+
+.company-details {
+    flex: 1;
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.job-info {
+    display: flex;
+    flex-wrap: wrap; /* Allow content to wrap when it overflows */
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.location img {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.apply-button {
+    background-color: #007bff;
+    font-size: 15px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    right: 40px;
+    bottom: 50%; 
+    transform: translateY(50%);
+    width: 10%;
+}
+
+.apply-button:hover {
+    background-color: #0056b3;
+}
+
+.text-and-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.location 
+{
+    margin-right: 10px; 
+}

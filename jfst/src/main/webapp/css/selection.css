@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'General Sans', sans-serif;
+}
+
+html{
+    background-color: #f8f5f5;
+    color: #090909;
+    overflow: hidden;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 50px 80px;
+}
+
+.nav > h1{
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.nav > h1 :hover
+{
+    cursor:pointer;
+}
+.navitems{
+    display: flex;
+    gap: 20px;
+}
+.navitems:hover
+{
+    cursor: pointer;
+}
+
+
+
+
+
+#initial-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h2 {
+    font-size: 24px;
+    margin: 20px 0;
+
+}
+
+form {
+    width: 60%;
+    max-width: 400px;
+    text-align: left;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+select,
+input[type="file"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: transparent;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+#initial-form input[type="submit"] {
+    background-color: #3498db; /* Button background color */
+    color: #ffffff; /* Text color */
+    border: none;
+    border-radius: 7px;
+    padding: 8px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+#initial-form input[type="submit"]:hover {
+    background-color: #2980b9; /* Darker background color on hover */
+}
+
+#generated-form {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 30px;
+    transform: translate(-50%, -50%);
+    overflow-y: auto; /* Enable vertical scrolling for the generated form */
+    max-height: 75vh;
+    max-width: 100%; /* Prevent horizontal scrollbar */
+}
+
+/* Reduce the width of the vertical scrollbar */
+#generated-form::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Customize scrollbar track */
+#generated-form::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Customize scrollbar handle */
+#generated-form::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* On hover, make the scrollbar handle wider */
+#generated-form::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#blue-background-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3498db; /* Blue background color */
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0.5; /* Adjust opacity as needed */
+    z-index: -1; /* Ensure it's positioned behind other content */
+}
+
+
+
+
+#done-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #3498db; /* Button background color */
+    color: #ffffff; /* Text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the "Done" button */
+#done-button:hover {
+    background-color: #2980b9; /* Darker background color on hover */
+}

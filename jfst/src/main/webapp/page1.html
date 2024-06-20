@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/quiz.css">
+    <title>Operating System</title>
+</head>
+<body>
+    <div class="nav">
+        <div>
+            <h1>UNSTOP</h1>   
+        </div>
+        <div class="navitems">
+            <div class="navitem">Home</div>
+            <div class="navitem">About</div>
+            <div class="navitem">Contact</div>
+        </div>
+    </div>  
+   
+    <div class="quiz-container">
+        <h1>Quiz Time</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. What is the primary purpose of the operating system's kernel?</p>
+                <label>
+                    <input type="radio" name="q1" value="Managing user interfaces"> Managing user interfaces
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="Handling user applications"> Handling user applications
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="Managing hardware resources"> Managing hardware resources
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="Handling file storage"> Handling file storage
+                </label>
+            </div>
+
+
+            <div class="question">
+                <p>2. What is virtual memory in an operating system?</p>
+                <label>
+                    <input type="radio" name="q2" value="A type of memory used for storing virtual files"> A type of memory used for storing virtual files
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="A feature that allows running multiple virtual machines"> A feature that allows running multiple virtual machines
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="A technique that combines physical RAM and disk storage to provide more usable memory"> A technique that combines physical RAM and disk storage to provide more usable memory
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="A memory module used for storing temporary data"> A memory module used for storing temporary data
+                </label>
+            </div>
+
+
+            <div class="question">
+                <p>3. Which scheduling algorithm in an operating system is designed to minimize the waiting time and turnaround time of processes?</p>
+                <label>
+                    <input type="radio" name="q3" value="Round Robin"> Round Robin
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="First-Come, First-Served (FCFS)"> First-Come, First-Served (FCFS)
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="Shortest Job Next (SJN)"> Shortest Job Next (SJN)
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="Priority Scheduling"> Priority Scheduling
+                </label>
+            </div>
+
+
+            <div class="question">
+                <p>4. What is a critical section in the context of concurrent processes in an operating system?</p>
+                <label>
+                    <input type="radio" name="q4" value="A section of code that can only be executed by a single process at a time"> A section of code that can only be executed by a single process at a time
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="A section of code that is critical for the performance of a process"> A section of code that is critical for the performance of a process
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="A section of code that is critical for system security"> A section of code that is critical for system security
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="A section of code that is executed only during system startup"> A section of code that is executed only during system startup
+                </label>
+            </div>
+
+
+            <div class="question">
+                <p>5. In the context of file systems, what is the purpose of an Inode?</p>
+                <label>
+                    <input type="radio" name="q5" value="It stores the actual data of a file."> It stores the actual data of a file.
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="It contains information about a directory's contents."> It contains information about a directory's contents.
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="It represents a data block in memory."> It represents a data block in memory.                
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="It stores metadata about a file, such as permissions and file size."> It stores metadata about a file, such as permissions and file size.
+                </label>
+            </div>
+            <!-- Add more questions as needed -->
+
+            <button type="button" id = "submit-button">Submit</button>
+        </form>
+
+        <div id="popup-container" class="popup-container">
+            <div class="popup">
+                <h2>Your Quiz Results</h2>
+                <p id="score" class="score">Your Score: 5 out of 5</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('quiz-form');
+    const submitButton = document.getElementById('submit-button');
+    const popupContainer = document.getElementById('popup-container');
+    const scoreDisplay = document.getElementById('score');
+
+    submitButton.addEventListener('click', function () {
+        // Replace this with the actual calculation of the score
+        const score = calculateScore(); // You should implement the calculateScore function
+
+        // Display the pop-up
+        popupContainer.style.display = 'block';
+        scoreDisplay.textContent = `Score: ${score} / 5`; // You can format the score however you like
+    });
+});
+
+
+        function calculateScore()
+        {
+            const correctAnswers = {
+                q1: 'Managing hardware resources',
+                q2: 'A technique that combines physical RAM and disk storage to provide more usable memory',
+                q3: 'Shortest Job Next (SJN)',
+                q4: 'A section of code that can only be executed by a single process at a time',
+                q5: 'It stores metadata about a file, such as permissions and file size.',
+                // Add correct answers for other questions
+            };
+
+            let score = 0;
+
+            for (let i = 1; i <= Object.keys(correctAnswers).length; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`);
+
+                if (answer) 
+                {
+                    const questionName = `q${i}`;
+                    if (answer.value === correctAnswers[questionName]) {
+                        score++;
+                    }
+                }
+            }
+            return score;
+        }
+</script>
+
+</html>

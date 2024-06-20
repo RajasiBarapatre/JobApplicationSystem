@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/quiz.css">
+    <title>Database Management System</title>
+</head>
+<body>
+
+    <figure class="bg">
+        <div class="nav">
+            <div>
+                <h1>UNSTOP</h1>
+               
+            </div>
+    
+            <div class="navitems">
+                <div class="navitem">Home</div>
+                <div class="navitem">About</div>
+                <div class="navitem">Contact</div>
+            </div>
+        </div>
+    </figure>
+    <div class="quiz-container">
+        <h1>Quiz Time</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. In DBMS, what is the primary purpose of a foreign key?</p>
+                <label>
+                    <input type="radio" name="q1" value="To enforce data constraints"> To enforce data constraints
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="To create a copy of the data for backup"> To create a copy of the data for backup
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="To improve query performance"> To improve query performance
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="To store binary data"> To store binary data
+                </label>
+            </div>
+
+            <div class="question">
+                <p>2. Which SQL command is used to retrieve data from a database?</p>
+                <label>
+                    <input type="radio" name="q2" value="INSERT"> INSERT
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="DELETE"> DELETE
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="SELECT"> SELECT
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="UPDATE"> UPDATE
+                </label>
+            </div>
+
+
+            <div class="question">
+                <p>3. What is the purpose of the ACID properties in database transactions?</p>
+                <label>
+                    <input type="radio" name="q3" value="To enhance data security"> To enhance data security
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="To improve query performance"> To improve query performance
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="To ensure data consistency and integrity"> To ensure data consistency and integrity
+                </label>
+                <label>
+                    <input type="radio" name="q3" value="Priority Scheduling"> To enable distributed databases
+                </label>
+            </div>
+
+
+            <div class="question">
+                <p>4. Which type of join combines rows from two or more tables based on a related column between them?</p>
+                <label>
+                    <input type="radio" name="q4" value="INNER JOIN"> INNER JOIN
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="OUTER JOIN"> OUTER JOIN
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="CROSS JOIN"> CROSS JOIN
+                </label>
+                <label>
+                    <input type="radio" name="q4" value="SELF JOIN"> SELF JOIN
+                </label>
+            </div>
+
+
+            <div class="question">
+                <p>5.  In DBMS, what does the term "normalization" refer to?</p>
+                <label>
+                    <input type="radio" name="q5" value="The process of organizing data into tables and columns"> The process of organizing data into tables and columns
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="The process of optimizing query performance."> The process of optimizing query performance
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="The process of data encryption"> The process of data encryption              
+                </label>
+                <label>
+                    <input type="radio" name="q5" value="The process of reducing data redundancy"> The process of reducing data redundancy
+                </label>
+            </div>
+
+            <button type="button" id = "submit-button">Submit</button>
+        </form>
+
+        <div id="popup-container" class="popup-container">
+            <div class="popup">
+                <h2>Your Quiz Results</h2>
+                <p id="score" class="score">Your Score: 5 out of 5</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('quiz-form');
+    const submitButton = document.getElementById('submit-button');
+    const popupContainer = document.getElementById('popup-container');
+    const scoreDisplay = document.getElementById('score');
+
+    submitButton.addEventListener('click', function () {
+        // Replace this with the actual calculation of the score
+        const score = calculateScore(); // You should implement the calculateScore function
+
+        // Display the pop-up
+        popupContainer.style.display = 'block';
+        scoreDisplay.textContent = `Score: ${score} / 5`; // You can format the score however you like
+    });
+});
+
+
+        function calculateScore()
+        {
+            const correctAnswers = {
+                q1: 'To enforce data constraints',
+                q2: 'SELECT',
+                q3: 'To ensure data consistency and integrity',
+                q4: 'INNER JOIN',
+                q5: 'The process of reducing data redundancy',
+                // Add correct answers for other questions
+            };
+
+            let score = 0;
+
+            for (let i = 1; i <= Object.keys(correctAnswers).length; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`);
+
+                if (answer) 
+                {
+                    const questionName = `q${i}`;
+                    if (answer.value === correctAnswers[questionName]) {
+                        score++;
+                    }
+                }
+            }
+            return score;
+        }
+</script>
+
+
+</script>
+</html>

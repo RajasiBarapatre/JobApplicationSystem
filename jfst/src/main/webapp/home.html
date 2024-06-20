@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentConnect</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <figure class="bg">
+    <div class="nav">
+        <div>
+            <h1>UNSTOP</h1>        
+        </div>
+
+        <div class="navitems">
+            <div class="navitem">Home</div>
+            <a href="#about-us" class="about-link">About</a>
+            <div class="navitem">Contact</div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="cards">
+            <div class = "desp">
+                <br>
+                <br>
+                <br>
+                <h1 class="city">Connecting<br>
+                    Talent, Colleges, Recruiters
+                  </h1>
+                  <br>
+                  <br>
+                  <h2 class = "d">Explore opportunities, learn, & get hired by your dream company.</h2>
+            </div>
+            
+            <div class="card">
+                <figure>
+                 
+                <img src="./images/Job_Posting.jpg" onclick="openNewPage()">
+             
+                </figure>
+                <div class="details">
+                    <h3>Job Posting</h3>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+						<img src="./images/Job_Search.jpg" onclick="openNewPage1()">
+                </figure>
+                <div class="details">
+                    <h3>Job Searching</h3>
+                </div>
+            </div>
+            <div class="card">
+                <figure>
+                    <img src="./images/Practice.jpg" onclick="openNewPage2()" >
+                </figure>
+                <div class="details">
+                    <h3>Practice</h3>
+                </div>
+            </div>
+            <br><br><br><br>
+        </div>
+        <div class="about-section" id="about-us">
+            <h2>About Us</h2>
+            <span style="font-size: 24px; font-weight: bold; color: rgb(42, 42, 106);"  >Where Talent , Meets Opportunities </span> <br>
+            <p> The largest community engagement platform and hiring platform.<br>
+              Our platform is a playground for this talent to learn, upskill,
+              showcase their skills, <br>gain CV points and get hired while unlocking 
+              their true potential throughout their academic journey. <br>This enables 
+              them to eventually get hired by their dream employers and start their
+              career journey. The platform <br>connects students across domains in INDIA to a
+              world of opportunities across the GLOBE.
+              <br/><br/></p>
+            <br>
+            <br>
+        </div>
+    
+        <div class="footer">
+            <p>&copy; 2023 UNSTOP. All rights reserved.</p>
+        </div>
+    </div>
+
+    
+</body>
+<script>
+   
+
+   function openNewPage() {
+		console.log("HOLA");
+        window.location.href = 'JobPostLogin.jsp';
+    }
+
+    function openNewPage2() {
+        window.location.href = 'practice.html';
+    }
+	
+	
+	function openNewPage1() {
+       window.location.href = "JobSearchServlet";
+    }
+    
+    
+</script>
+</html>
